@@ -27,7 +27,7 @@ const ProfilePage: React.FC = () => {
     { id: '15', image: '/images/3.png', date: '6/30/2024', description: ''  },
     { id: '16', image: '/images/13.png', date: '6/22/2024', description: ''  },
     { id: '17', image: '/images/9.png', date: '6/07/2024', description: ''  },
-    { id: '18', image: '/images/12.png', date: '4/18/2024', description: ''  },
+    { id: '18', image: '/images/12.png', date: '4/18/2024', description: '' },
   ]);
 
   const [selectedNFT, setSelectedNFT] = useState<NFTData | null>(null);
@@ -65,9 +65,7 @@ const ProfilePage: React.FC = () => {
           </button>
         </div>
 
-        {/* Detailed View Container */}
         <div className="relative">
-          {/* Description Box - Positioned independently */}
           <div
             className="absolute"
             style={{
@@ -86,7 +84,7 @@ const ProfilePage: React.FC = () => {
                 animation: 'glow 1.5s ease-in-out infinite alternate',
               }}
             >
-              <p 
+              <p
                 className="text-center text-[#ffbb54] overflow-hidden leading-9"
                 style={{
                   fontFamily: 'Irish Grover, cursive',
@@ -99,12 +97,11 @@ const ProfilePage: React.FC = () => {
             </div>
           </div>
 
-          {/* Cat Avatar - Positioned relative to description box */}
           <div
             className="absolute"
             style={{
-              top: '350px', // Aligned with bottom of description box
-              left: '200px', // Left of description box
+              top: '350px',
+              left: '200px',
             }}
           >
             <img
@@ -114,12 +111,11 @@ const ProfilePage: React.FC = () => {
             />
           </div>
 
-          {/* NFT Image - Positioned at top right of description box */}
           <div
             className="absolute"
             style={{
-              top: '150px', // Above description box
-              left: '1120px', // Right of description box
+              top: '150px',
+              left: '1120px',
             }}
           >
             <div className="flex flex-col items-center">
@@ -135,7 +131,7 @@ const ProfilePage: React.FC = () => {
                   backgroundSize: 'cover',
                   color: '#fff',
                   letterSpacing: '1px',
-                  padding: '15px 0',
+                  padding: '18px 0',
                 }}
               >
                 {selectedNFT.date}
@@ -143,27 +139,53 @@ const ProfilePage: React.FC = () => {
             </div>
           </div>
 
-          {/* Share Button - Positioned below and outside description box */}
           <div
             className="absolute"
             style={{
-              top: '520px', // Below description box
-              left: '650px', // Centered relative to description box
+              top: '520px',
+              left: '650px',
             }}
           >
             <button
-              className="w-36 h-12 text-center text-white text-lg font-bold leading-[3rem] shadow-lg hover:scale-105 transition-transform"
+              className="uppercase font-bold text-[#ffbb54] hover:scale-105 transition-transform"
               style={{
-                backgroundImage: "url('/images/Bg_button.png')",
-                backgroundSize: 'cover',
-                color: '#fff',
-                textTransform: 'uppercase',
-                letterSpacing: '1px',
-                padding: '3px 0',
-                cursor: 'pointer',
+                fontFamily: 'Irish Grover, cursive',
+                fontSize: '24px',
+                fontWeight: 400,
+                width: '200px',
+                height: '60px',
+                borderRadius: '16px',
+                border: '2px solid #ffa336',
+                background: 'linear-gradient(to bottom, rgba(255, 163, 54, 0.15), rgba(0, 0, 0, 0.25))',
+                boxShadow: '0 0 10px #c77f7f, 0 0 20px #c77f7f',
+                animation: 'shareButtonGlow 1.5s ease-in-out infinite alternate',
+                position: 'relative',
+                paddingRight: '40px',
               }}
             >
+              <style>
+                {`
+                @keyframes shareButtonGlow {
+                  from {
+                    box-shadow: 0 0 10px #c77f7f, 0 0 20px #c77f7f;
+                  }
+                  to {
+                    box-shadow: 0 0 15px #c77f7f, 0 0 25px #c77f7f;
+                  }
+                }
+              `}
+              </style>
               Share
+              <img
+                src="/images/paw-icon.png"
+                alt="Paw Icon"
+                className="w-6 h-6 object-contain absolute"
+                style={{
+                  right: '20px', // Position from right edge of button
+                  top: '50%',
+                  transform: 'translateY(-50%)'
+                }}
+              />
             </button>
           </div>
         </div>
@@ -171,7 +193,6 @@ const ProfilePage: React.FC = () => {
     );
   }
 
-  // Rest of the component remains the same
   return (
     <div
       className="relative min-h-screen w-full bg-no-repeat bg-cover p-6"
@@ -198,7 +219,7 @@ const ProfilePage: React.FC = () => {
         </Link>
       </div>
 
-      <br/> <br/> <br/> 
+      <br /> <br /> <br />
 
       {/* Card Grid */}
       <div className="flex justify-center mt-8">
